@@ -1,3 +1,8 @@
+resource "aws_iam_account_alias" "alias" {
+  account_alias = var.aws_account_alias
+  count         = var.aws_account_alias == "" ? 0 : 1
+}
+
 data "aws_caller_identity" "current" {}
 
 data "aws_iam_policy_document" "deploy_role_assume" {

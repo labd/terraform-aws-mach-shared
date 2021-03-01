@@ -1,7 +1,3 @@
-# variable "name" {
-#   description = "Name of the shared account, for example your-project-service"
-# }
-
 variable "code_repo_name" {
   description = "Name of code repository, for example your-project-lambdas"
 }
@@ -18,4 +14,10 @@ variable "allow_code_repo_read_access" {
 variable "allow_assume_deploy_role" {
   type = list(string)
   default = []
+}
+
+variable "aws_account_alias" {
+  type        = string
+  default     = ""
+  description = "Set custom AWS account alias"
 }
